@@ -1,6 +1,6 @@
 <?php
-require_once(INCLUDE_DIR.'/class.plugin.php');
-require_once(INCLUDE_DIR.'/class.forms.php');
+require_once(INCLUDE_DIR . '/class.plugin.php');
+require_once(INCLUDE_DIR . '/class.forms.php');
 class SendSMSConfig extends PluginConfig
 {
     function getOptions()
@@ -27,15 +27,21 @@ class SendSMSConfig extends PluginConfig
             )),
             'sendsms_ticket_created_message' => new TextareaField(
                 array(
-                    'label' => __('Message'), //TODO: add hint
+                    'label' => __('Message'),
                     'hint' => __('Disponible variables: {phone_number}, {name}, {email}, {subject}, {help_topic}, {create_date}, {priority}, {ticket_url}'),
                     'configuration' => array(
                         'html' => false,
-                        'rows'=>2, 
-                        'cols'=>40
+                        'rows' => 2,
+                        'cols' => 40
                     )
                 )
-            )
+            ),
+            'sendsms_ticket_created_short' => new BooleanField(array(
+                'label' => __('Transform all URLs in short URLs?')
+            )),
+            'sendsms_ticket_created_gdrp' => new BooleanField(array(
+                'label' => __('Add an unsubscribe link to the message?')
+            ))
         );
     }
 }
