@@ -31,7 +31,7 @@ class SendSMSConfig extends PluginConfig
                     'hint' => __('Disponible variables: {phone_number}, {name}, {email}, {subject}, {help_topic}, {create_date}, {priority}, {ticket_url}'),
                     'configuration' => array(
                         'html' => false,
-                        'rows' => 2,
+                        'rows' => 6,
                         'cols' => 40
                     )
                 )
